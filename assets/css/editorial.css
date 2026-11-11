@@ -1,0 +1,145 @@
+/* Capa editorial "revista escolar": ritmo, color, collage, marquesina */
+
+/* ---------- Hero collage ---------- */
+.hero { position: relative; overflow: hidden; border-top: 0; padding-block: 2.5rem 4rem; background:
+  radial-gradient(60rem 30rem at 85% -10%, rgba(224,60,39,.22), transparent 60%),
+  radial-gradient(40rem 24rem at -10% 110%, rgba(244,196,48,.14), transparent 60%), var(--navy); }
+.hero h1 { font-size: clamp(3.4rem, 13vw, 8rem); line-height: .86; }
+.hero h1 em { font-style: normal; color: var(--gold); position: relative; white-space: nowrap; }
+.hero h1 em::after { content: ""; position: absolute; left: 0; right: 0; bottom: .02em; height: .09em; background: var(--red); transform: scaleX(0); transform-origin: left; animation: draw .9s .5s var(--ease) forwards; }
+@keyframes draw { to { transform: scaleX(1); } }
+.hero .lead { max-width: 30ch; font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
+.collage { position: relative; min-height: 440px; margin-top: .5rem; }
+.collage .foto { position: absolute; border: 6px solid #fff; border-radius: 3px; box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+.collage .c1 { left: 4%; top: 0; width: 72%; height: 300px; transform: rotate(-2.5deg); background: var(--navy-700); z-index: 1; }
+.collage .c2 { right: 0; bottom: 0; width: 46%; height: 220px; transform: rotate(3.5deg); z-index: 2; }
+.collage .c3 { left: 0; bottom: 14px; width: 34%; height: 150px; transform: rotate(-5deg); z-index: 2; }
+.collage .foto figcaption { background: #fff; color: var(--navy); left: 0; bottom: 0; }
+.collage .hero__video figcaption { background: var(--red); color: #fff; }
+.sticker { position: absolute; z-index: 3; right: 2%; top: -14px; width: 116px; height: 116px; border-radius: 50%; background: var(--gold); color: var(--navy); display: grid; place-content: center; text-align: center; transform: rotate(12deg); box-shadow: 0 8px 20px rgba(0,0,0,.3); animation: bob 5s ease-in-out infinite; font: 700 .8rem/1.1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; }
+.sticker b { display: block; font: 800 2.4rem/.9 var(--font-display); letter-spacing: 0; }
+@keyframes bob { 50% { transform: rotate(8deg) translateY(-6px); } }
+
+/* ---------- Marquesina ---------- */
+.marquee { background: var(--red); color: #fff; overflow: hidden; border-block: 3px solid var(--gold); }
+.marquee__track { display: flex; width: max-content; animation: scroll 38s linear infinite; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee span { font: 800 1.9rem/1 var(--font-display); text-transform: uppercase; letter-spacing: .02em; padding: .9rem 0; white-space: nowrap; }
+.marquee span::after { content: "✦"; color: var(--gold); margin-inline: 1.4rem; font-size: 1.2rem; vertical-align: .2em; }
+@keyframes scroll { to { transform: translateX(-50%); } }
+
+/* ---------- Cifras en bloques de color ---------- */
+.stats { display: grid; grid-template-columns: 1fr 1fr; }
+.stats > div { padding: 1.6rem 1.25rem; display: flex; flex-direction: column; gap: .35rem; }
+.stats strong { font: 800 clamp(2.4rem, 7vw, 3.6rem)/.9 var(--font-display); text-transform: uppercase; white-space: nowrap; }
+.stats span { font-weight: 600; line-height: 1.3; max-width: 22ch; }
+.stats .s1 { background: var(--paper); color: var(--navy); } .stats .s1 strong { color: var(--red-dark); }
+.stats .s2 { background: var(--gold); color: var(--navy); }
+.stats .s3 { background: var(--navy); color: #fff; } .stats .s3 strong { color: var(--gold); }
+.stats .s4 { background: var(--red-dark); color: #fff; }
+.stats .s5 { background: var(--cream); color: var(--navy); grid-column: span 2; } .stats .s5 strong { color: var(--red-dark); }
+
+/* ---------- Encabezados de sección ---------- */
+.kicker { display: flex; align-items: flex-end; gap: 1rem; margin-bottom: 1.5rem; }
+.kicker .num { font: 800 clamp(3.5rem, 10vw, 6rem)/.8 var(--font-display); color: transparent; -webkit-text-stroke: 2px var(--gold); }
+.section--navy .kicker .num { -webkit-text-stroke-color: var(--gold); }
+.kicker h2 { margin: 0; }
+.kicker .eyebrow { margin-bottom: .5rem; }
+
+/* ---------- Tarjetas de nivel tipo portada ---------- */
+.covers { display: grid; gap: 1.5rem; }
+.cover { position: relative; display: block; min-height: 440px; border-radius: 4px; overflow: hidden; color: #fff; text-decoration: none; background: var(--navy); isolation: isolate; }
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .8s var(--ease); }
+.cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(10,20,64,0) 25%, rgba(10,20,64,.92) 82%); }
+.cover:hover img { transform: scale(1.06); }
+.cover:hover { color: #fff; }
+.cover__tab { position: absolute; top: 0; left: 1.25rem; background: var(--red); color: #fff; padding: .6rem .9rem .5rem; font: 800 1.1rem/1 var(--font-display); text-transform: uppercase; letter-spacing: .06em; }
+.cover:nth-child(2) .cover__tab { background: var(--gold); color: var(--navy); }
+.cover:nth-child(3) .cover__tab { background: #fff; color: var(--navy); }
+.cover__body { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.5rem 1.4rem; }
+.cover h3 { color: #fff; font-size: clamp(2.2rem, 6vw, 3rem); line-height: .9; margin-bottom: .6rem; }
+.cover p { margin: 0 0 .75rem; font-size: 1rem; color: rgba(255,255,255,.92); }
+.cover__go { display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+.cover__go svg { width: 1.1rem; height: 1.1rem; transition: transform .25s var(--ease); }
+.cover:hover .cover__go svg { transform: translateX(5px); }
+
+/* ---------- Mosaico de vida escolar ---------- */
+.mosaic { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
+.mosaic .foto { height: 100%; border-radius: 3px; }
+.mosaic .m1 { grid-column: span 2; grid-row: span 2; }
+.mosaic .m4 { grid-row: span 2; }
+.mosaic .foto figcaption { left: 0; bottom: 0; transform: translateY(100%); transition: transform .35s var(--ease); background: var(--red); }
+.mosaic .foto:hover figcaption { transform: none; }
+.foto[data-parallax] img { height: 118%; }
+
+/* ---------- Talleres ---------- */
+.workshops { list-style: none; margin: 0; padding: 0; counter-reset: w; }
+.workshops li { counter-increment: w; display: flex; align-items: baseline; gap: 1rem; padding: .7rem 0; border-top: 1px solid var(--line); font: 800 clamp(1.7rem, 5vw, 2.6rem)/1 var(--font-display); text-transform: uppercase; color: var(--navy); transition: color .25s, padding-left .3s var(--ease); }
+.workshops li:last-child { border-bottom: 1px solid var(--line); }
+.workshops li::before { content: counter(w, decimal-leading-zero); font: 700 1rem var(--font-body); color: var(--red-dark); min-width: 1.8rem; }
+.workshops li:hover { color: var(--red-dark); padding-left: .6rem; }
+
+/* ---------- Valores ---------- */
+.values li { grid-template-columns: auto 1fr; align-items: baseline; gap: 0 1rem; padding: 1.1rem 0; }
+.values .n { font: 800 3.6rem/.8 var(--font-display); color: transparent; -webkit-text-stroke: 1.5px var(--gold); min-width: 4.2rem; }
+.values b { font-size: clamp(2rem, 5vw, 2.6rem); color: #fff; }
+.values li > span:last-child { grid-column: 2; }
+
+/* ---------- Reseñas ---------- */
+.quote { position: relative; padding: 2rem 1.5rem 1.5rem; }
+.quote::before { content: "“"; position: absolute; top: -.1rem; left: 1rem; font: 800 5rem/1 var(--font-display); color: var(--gold); }
+.quote .stars { margin-top: 1.2rem; }
+.quote--big { background: var(--navy); color: #fff; border-color: var(--navy); }
+.quote--big p { font-size: 1.3rem; line-height: 1.45; }
+.quote--big footer { color: var(--gold); }
+.quote--big .stars { color: var(--gold); }
+
+/* ---------- Pasos conectados ---------- */
+.steps li { position: relative; }
+@media (min-width: 900px) {
+  .steps li:not(:last-child)::after { content: ""; position: absolute; top: 1.5rem; left: 3.6rem; right: -1.2rem; height: 2px; background: repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 14px); }
+}
+
+/* ---------- Banda final roja ---------- */
+.band { background: var(--red-dark); color: #fff; border-top: 3px solid var(--gold); }
+.band h2 { color: #fff; font-size: clamp(2.6rem, 8vw, 5.5rem); line-height: .88; }
+.band .eyebrow { color: var(--gold); }
+.band .contact-list b { color: var(--gold); }
+.band a:not(.btn) { color: #fff; }
+.band .btn--primary { background: #fff; color: var(--red-dark); }
+.band .btn--primary:hover { background: var(--gold); color: var(--navy); }
+
+/* ---------- Escritorio ---------- */
+@media (min-width: 900px) {
+  .hero { padding-block: 4rem 6rem; }
+  .collage { min-height: 600px; }
+  .collage .c1 { width: 70%; height: 400px; left: 6%; }
+  .collage .c2 { width: 48%; height: 270px; }
+  .collage .c3 { width: 33%; height: 190px; }
+  .sticker { width: 140px; height: 140px; right: 6%; top: -20px; }
+  .stats { grid-template-columns: repeat(5, 1fr); }
+  .stats > div { padding: 2.2rem 1.5rem; min-height: 190px; justify-content: space-between; }
+  .stats .s5 { grid-column: auto; }
+  .covers { grid-template-columns: repeat(3, 1fr); align-items: start; }
+  .cover { min-height: 560px; }
+  .cover:nth-child(2) { margin-top: 3rem; }
+  .mosaic { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; }
+  .mosaic .m1 { grid-column: span 2; grid-row: span 2; }
+  .workshops { columns: 2; column-gap: 4rem; }
+  .workshops li { break-inside: avoid; }
+  .values li { grid-template-columns: 1fr; gap: .3rem; align-content: start; border-top-width: 3px; padding-top: 1.2rem; }
+  .values li > span:last-child { grid-column: 1; }
+  .quote-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.25rem; }
+  .quote-grid .quote--big { grid-row: span 2; display: flex; flex-direction: column; justify-content: center; padding: 3rem 2.5rem; }
+  .quote-grid .quote--big p { font-size: 1.6rem; }
+}
+@media (max-width: 899px) { .quote-grid { display: grid; gap: 1.25rem; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track, .sticker { animation: none !important; }
+  .hero h1 em::after { transform: none; animation: none; }
+}
+
+.section--navy .pendiente, .band .pendiente { color: #5c4600 !important; }
+
+.collage .video-toggle { top: .6rem; left: .6rem; right: auto; }
