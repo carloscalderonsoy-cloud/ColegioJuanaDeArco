@@ -1,0 +1,148 @@
+/* Capa "limpio y divertido": más aire, formas redondeadas, color en pequeñas dosis.
+   Se carga después de editorial.css. Para volver atrás, quitar el <link> de esta hoja. */
+:root { --r: 22px; --r-sm: 14px; --pop: 0 5px 0 rgba(10,20,64,.9); --tint-gold: #fff1bf; --tint-red: #ffe3dd; --tint-blue: #e1e6fb; --tint-green: #dcf3e4; }
+
+/* ---------- Botones tipo sticker ---------- */
+.btn { border-radius: 999px; min-height: 3.4rem; padding-inline: 1.7rem; transition: transform .15s var(--ease), box-shadow .15s var(--ease), background-color .2s; }
+.btn--primary { background: var(--red); box-shadow: 0 4px 0 var(--red-dark); }
+.btn--primary:hover { background: var(--red); transform: translateY(-2px); box-shadow: 0 6px 0 var(--red-dark); }
+.btn--primary:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--red-dark); }
+.btn--ghost { color: var(--navy); border-color: var(--navy); }
+.btn--ghost:hover { background: var(--navy); color: #fff; }
+.btn--outline { border-radius: 999px; }
+.header-actions .btn { box-shadow: none; }
+.header-actions .btn:hover { box-shadow: none; transform: none; background: var(--red-dark); }
+.site-header { border-bottom: 0; }
+
+/* ---------- Hero claro ---------- */
+.hero { background: var(--paper); color: var(--ink); padding-block: 2.5rem 4.5rem; }
+.hero::before { content: ""; position: absolute; width: 38rem; height: 38rem; right: -14rem; top: -12rem; border-radius: 50%; background: var(--tint-gold); z-index: 0; }
+.hero::after { content: ""; position: absolute; width: 16rem; height: 16rem; left: -7rem; bottom: -6rem; border-radius: 50%; background: var(--tint-red); z-index: 0; }
+.hero .container { position: relative; z-index: 1; }
+.hero h1, .hero p { color: var(--navy); }
+.hero .eyebrow { color: var(--red-dark); }
+.hero .lead { color: var(--ink); }
+.hero__note { color: var(--ink-soft); }
+.hero h1 { font-size: clamp(3.2rem, 12vw, 7.2rem); line-height: .88; }
+.hero h1 em { color: var(--navy); z-index: 0; }
+.hero h1 em::before { content: ""; position: absolute; left: -.08em; right: -.08em; top: 12%; bottom: 4%; background: var(--gold); border-radius: 10px; transform: rotate(-1.6deg) scaleX(0); transform-origin: left; animation: draw .8s .35s var(--ease) forwards; z-index: -1; }
+.hero h1 em::after { display: none; }
+.hero .rule { display: none; }
+
+/* Collage redondeado con sombras planas de color */
+.collage .foto { border: 5px solid #fff; border-radius: var(--r); box-shadow: 8px 8px 0 var(--navy); }
+.collage .c2 { box-shadow: 8px 8px 0 var(--red); }
+.collage .c3 { box-shadow: 6px 6px 0 var(--gold); }
+.collage .foto figcaption { border-radius: 0 var(--r-sm) 0 0; padding: .4rem .8rem; }
+.sticker { background: var(--red); color: #fff; box-shadow: 0 5px 0 var(--red-dark); }
+.doodle { position: absolute; z-index: 3; pointer-events: none; }
+.doodle--star { width: 44px; left: 40%; top: -22px; color: var(--gold); transform: rotate(-12deg); animation: spin 14s linear infinite; }
+.doodle--squig { width: 120px; left: -10px; top: 46%; color: var(--red); transform: rotate(-8deg); }
+.doodle--dots { width: 70px; right: -6px; bottom: 36%; color: var(--navy); }
+@keyframes spin { to { transform: rotate(348deg); } }
+
+/* ---------- Marquesina ligera ---------- */
+.marquee { background: var(--gold); color: var(--navy); border: 0; }
+.marquee span { font-size: 1.6rem; padding: .7rem 0; }
+.marquee span::after { color: var(--red); }
+
+/* ---------- Cifras: tarjetas redondeadas ---------- */
+.stats { gap: 12px; padding: 2.5rem var(--gutter) 1rem; max-width: calc(var(--maxw) + 2 * var(--gutter)); margin-inline: auto; }
+.stats > div { border-radius: var(--r); min-height: 0; padding: 1.3rem 1.3rem 1.4rem; transition: transform .25s var(--ease); }
+.stats > div:hover { transform: translateY(-4px) rotate(-1deg); }
+.stats .s1 { background: var(--tint-gold); } .stats .s1 strong { color: var(--navy); }
+.stats .s2 { background: var(--tint-red); color: var(--navy); }
+.stats .s3 { background: var(--tint-blue); color: var(--navy); } .stats .s3 strong { color: var(--navy); }
+.stats .s4 { background: var(--tint-green); color: var(--navy); }
+.stats .s5 { background: var(--cream); }
+.stats strong { font-size: clamp(2.2rem, 6.5vw, 3.1rem); }
+
+/* ---------- Encabezados de sección: insignia en vez de número gigante ---------- */
+.kicker { align-items: center; gap: 1rem; }
+.kicker .num { -webkit-text-stroke: 0; color: var(--navy); background: var(--gold); width: 3.2rem; height: 3.2rem; border-radius: 50%; display: grid; place-items: center; font: 800 1.35rem/1 var(--font-display); flex: none; transform: rotate(-8deg); }
+.kicker:nth-of-type(even) .num { background: var(--tint-red); }
+.section--navy .kicker .num { background: var(--gold); color: var(--navy); -webkit-text-stroke: 0; }
+.eyebrow::before { height: 3px; border-radius: 3px; background: var(--red); }
+.section--navy .eyebrow::before { background: var(--gold); }
+.section { padding-block: clamp(3.5rem, 8vw, 7rem); }
+.section--cream { border: 0; background: var(--cream); }
+.section--navy, .hero { border-top: 0; }
+
+/* ---------- Niveles: tarjetas limpias con foto arriba ---------- */
+.cover { display: flex; flex-direction: column; min-height: 0; border-radius: var(--r); background: var(--tint-gold); color: var(--navy); overflow: hidden; border: 3px solid var(--navy); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.cover:nth-child(2) { background: var(--tint-red); margin-top: 0; }
+.cover:nth-child(3) { background: var(--tint-blue); }
+.cover:hover { color: var(--navy); transform: translateY(-6px) rotate(-.6deg); box-shadow: 8px 8px 0 var(--navy); }
+.cover:nth-child(2):hover { transform: translateY(-6px) rotate(.6deg); }
+.cover img { position: static; z-index: auto; height: 260px; border-bottom: 3px solid var(--navy); }
+.cover::before { display: none; }
+.cover__tab { top: 1rem; left: 1rem; border-radius: 999px; padding: .5rem .9rem; border: 2px solid var(--navy); background: #fff !important; color: var(--navy) !important; }
+.cover__body { position: static; padding: 1.4rem 1.4rem 1.6rem; }
+.cover h3 { color: var(--navy); font-size: clamp(2rem, 5vw, 2.5rem); }
+.cover p { color: var(--ink); }
+.cover__go { border-color: var(--red); }
+.covers { align-items: stretch; }
+
+/* ---------- Mosaico redondeado ---------- */
+.mosaic { gap: 12px; }
+.mosaic .foto { border-radius: var(--r); transition: transform .3s var(--ease); }
+.mosaic .foto:nth-child(odd):hover { transform: rotate(-1.2deg) scale(1.02); }
+.mosaic .foto:nth-child(even):hover { transform: rotate(1.2deg) scale(1.02); }
+.mosaic .foto figcaption { border-radius: 0 var(--r-sm) 0 0; }
+
+/* ---------- Talleres: chips de colores ---------- */
+.workshops { columns: auto; display: flex; flex-wrap: wrap; gap: .75rem; counter-reset: none; }
+.workshops li { counter-increment: none; display: inline-flex; padding: .75rem 1.3rem; border: 2px solid var(--navy); border-radius: 999px; font: 800 clamp(1.15rem, 3.4vw, 1.5rem)/1 var(--font-display); letter-spacing: .02em; background: var(--tint-gold); transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
+.workshops li:last-child { border-bottom: 2px solid var(--navy); }
+.workshops li::before { display: none; }
+.workshops li:nth-child(5n+2) { background: var(--tint-red); }
+.workshops li:nth-child(5n+3) { background: var(--tint-blue); }
+.workshops li:nth-child(5n+4) { background: var(--tint-green); }
+.workshops li:nth-child(5n) { background: #fff; }
+.workshops li:nth-child(odd) { transform: rotate(-1.5deg); }
+.workshops li:nth-child(even) { transform: rotate(1.2deg); }
+.workshops li:hover { padding-left: 1.3rem; color: var(--navy); transform: translateY(-4px) rotate(0); box-shadow: 0 5px 0 var(--navy); }
+
+/* ---------- Valores: tarjetas ---------- */
+.values { gap: 12px; }
+.values li { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18); border-radius: var(--r); padding: 1.2rem 1.3rem 1.4rem; transition: transform .25s var(--ease), background .25s; }
+.values li:hover { transform: translateY(-4px); background: rgba(255,255,255,.12); }
+.values .n { -webkit-text-stroke: 0; color: var(--navy); background: var(--gold); width: 2.6rem; height: 2.6rem; min-width: 0; border-radius: 50%; display: grid; place-items: center; font-size: 1.2rem; line-height: 1; }
+.values b { color: #fff; font-size: clamp(1.7rem, 4vw, 2rem); }
+
+/* ---------- Reseñas ---------- */
+.quote { border: 2px solid var(--navy); border-top: 2px solid var(--navy); border-radius: var(--r); background: #fff; transition: transform .25s var(--ease); }
+.quote:hover { transform: translateY(-3px); }
+.quote::before { color: var(--red); }
+.quote--big { background: var(--navy); }
+.quote--big::before { color: var(--gold); }
+
+/* ---------- Pasos, FAQ, formularios ---------- */
+.steps li::before { box-shadow: 0 4px 0 var(--red-dark); }
+.steps li:not(:last-child)::after { background: repeating-linear-gradient(90deg, var(--navy) 0 6px, transparent 6px 14px); opacity: .35; height: 3px; border-radius: 3px; }
+.faq details { border: 2px solid var(--navy); border-radius: var(--r-sm); padding: .15rem 1.1rem; margin-bottom: .7rem; background: #fff; }
+.faq details:last-child { border-bottom: 2px solid var(--navy); }
+.faq details[open] { background: var(--tint-gold); }
+.form { border: 2px solid var(--navy); border-radius: var(--r); box-shadow: 8px 8px 0 var(--navy); }
+.field input, .field select, .field textarea { border-radius: var(--r-sm); border-color: var(--navy); }
+.chip, .card { border-radius: var(--r); }
+.card { border: 2px solid var(--navy); }
+.map { border-radius: var(--r); border: 2px solid var(--navy); }
+
+/* ---------- Banda final en panel redondeado ---------- */
+.band { background: transparent; border: 0; padding-block: 1rem; }
+.band > .container { background: var(--red-dark); border-radius: calc(var(--r) + 8px); padding: clamp(2rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem); box-shadow: 10px 10px 0 var(--navy); }
+.band h2 { font-size: clamp(2.4rem, 7vw, 4.6rem); }
+.band .btn--primary { background: #fff; color: var(--red-dark); box-shadow: 0 4px 0 rgba(0,0,0,.25); }
+.band .btn--primary:hover { background: var(--gold); color: var(--navy); }
+
+/* ---------- Fotos en páginas de nivel ---------- */
+.hero__grid > .foto { border: 5px solid #fff; border-radius: var(--r); box-shadow: 8px 8px 0 var(--navy); }
+
+@media (min-width: 900px) {
+  .hero { padding-block: 4.5rem 7rem; }
+  .stats { grid-template-columns: repeat(5, 1fr); }
+  .covers { gap: 1.75rem; }
+  .doodle--star { left: 44%; }
+}
+@media (prefers-reduced-motion: reduce) { .doodle--star { animation: none; } .workshops li { transform: none !important; } .hero h1 em::before { transform: rotate(-1.6deg); animation: none; } }
