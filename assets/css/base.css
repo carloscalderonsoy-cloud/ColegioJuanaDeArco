@@ -1,0 +1,55 @@
+/* Reset y base */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 400 var(--fs-body)/1.6 var(--font-body); text-align: left;
+}
+img, svg, iframe { display: block; max-width: 100%; }
+img { height: auto; background: var(--navy-100); }
+h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; line-height: 0.95; margin: 0 0 0.6em; color: var(--navy); letter-spacing: 0.005em; }
+h1 { font-size: var(--fs-h1); font-weight: 800; }
+h2 { font-size: var(--fs-h2); font-weight: 800; }
+h3 { font-size: var(--fs-h3); font-weight: 700; line-height: 1.05; }
+p { margin: 0 0 1em; max-width: 62ch; }
+a { color: var(--red-dark); text-underline-offset: 3px; }
+a:hover { color: var(--navy); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+ul { padding-left: 1.2em; margin: 0 0 1em; }
+
+.container { width: min(100% - 2 * var(--gutter), var(--maxw)); margin-inline: auto; }
+.section { padding-block: var(--section); }
+.section--cream { background: var(--cream); }
+.section--navy { background: var(--navy); color: #fff; }
+.section--navy h2, .section--navy h3 { color: #fff; }
+.section--navy a { color: #fff; }
+.eyebrow {
+  display: flex; align-items: center; gap: 0.75rem; margin: 0 0 1rem;
+  font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red-dark);
+}
+.eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--gold); }
+.section--navy .eyebrow, .hero .eyebrow { color: var(--gold); }
+.rule { display: block; width: 56px; height: 4px; background: var(--red); margin: 0 0 1.25rem; }
+.lead { font-size: var(--fs-lead); line-height: 1.5; }
+.pendiente { background: #fff3c4; color: #5c4600; padding: 0 0.25em; border-radius: 3px; font-weight: 600; }
+.skip { position: absolute; left: -999px; top: 0; background: var(--gold); color: var(--navy); padding: 0.75rem 1rem; z-index: 100; font-weight: 700; }
+.skip:focus { left: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Animación sutil de entrada (JS añade .is-in; sin JS todo es visible) */
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease); transition-delay: var(--d, 0s); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* Editorial: filetes dorados y numeración sutil */
+.section--navy, .hero { border-top: 3px solid var(--gold); }
+.section--cream { border-block: 1px solid var(--line); }
+h2 + .rule { margin-top: -0.2rem; }
+.prose { max-width: 760px; }
+.prose h2 { font-size: 1.9rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.prose p { max-width: none; }

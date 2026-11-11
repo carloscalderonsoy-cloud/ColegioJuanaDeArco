@@ -1,0 +1,41 @@
+/* Tokens de marca — Colegio Juana de Arco La Estancia */
+:root {
+  /* Color */
+  --navy-900: #060d2e;
+  --navy: #0a1440;           /* base */
+  --navy-700: #16225e;
+  --navy-100: #e4e7f1;
+  --red: #e03c27;            /* botones y acentos (solo texto grande/negrita en blanco) */
+  --red-dark: #b8301e;       /* texto rojo sobre blanco, hover */
+  --gold: #f4c430;
+  --gold-dark: #8a6500;      /* dorado legible sobre papel */           /* solo detalles puntuales */
+  --paper: #fffdf8;           /* papel cálido (editorial) */
+  --cream: #f6f0e1;          /* fondo de secciones alternas */
+  --ink: #121936;            /* texto */
+  --ink-soft: #4a5170;       /* texto secundario (contraste AA sobre blanco) */
+  --line: #e2d9c2;
+  --wa: #1a7f45;             /* WhatsApp, contraste AA con blanco */
+
+  /* Tipografía */
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Escala */
+  --fs-body: 1.0625rem;
+  --fs-lead: 1.25rem;
+  --fs-h1: clamp(2.9rem, 9vw + 0.5rem, 5.75rem);
+  --fs-h2: clamp(2rem, 4.5vw + 0.5rem, 3.25rem);
+  --fs-h3: 1.5rem;
+
+  /* Espacio y forma */
+  --gutter: 1.25rem;
+  --section: clamp(3.5rem, 8vw, 6.5rem);
+  --maxw: 1200px;
+  --radius: 6px;
+  --shadow: 0 6px 20px rgba(10, 20, 64, 0.12);
+  --tap: 2.75rem;            /* 44 px mínimo */
+
+  /* Movimiento */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 0.5s;
+}

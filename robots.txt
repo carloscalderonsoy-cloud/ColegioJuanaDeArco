@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /referencia/
+
+Sitemap: https://colegiojuanadearco.edu.mx/sitemap.xml
